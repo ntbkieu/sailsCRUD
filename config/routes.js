@@ -20,7 +20,9 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': { view: 'pages/home' },
-  '/about': { view: 'pages/about' },
+  'get /about': { view: 'pages/about' },
+  'get /contact': { view: 'pages/contact' },
+  'post /add': 'DataController.add',
 
 
   /***************************************************************************
