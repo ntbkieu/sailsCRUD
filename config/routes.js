@@ -22,7 +22,11 @@ module.exports.routes = {
   '/': { view: 'pages/home' },
   'get /about': { view: 'pages/about' },
   'get /contact': { view: 'pages/contact' },
-  'post /add': '{DataController.add',
+  'get /list': 'DataController.list',
+  'post /add': 'DataController.add',
+  'get /edit/:id': 'DataController.edit',
+  'post /update/:id': 'DataController.update',
+  'delete /delete/:id': 'DataController.delete',
 
 
   /***************************************************************************
