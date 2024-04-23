@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /**
  * DataController
  *
@@ -18,7 +19,7 @@ module.exports = {
       }
 
       // Redirect to home page after successful submission
-      res.redirect('/');
+      res.redirect('/list');
     });
   },
 

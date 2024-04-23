@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 /**
  * Route Mappings
  * (sails.config.routes)
