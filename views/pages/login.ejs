@@ -11,7 +11,7 @@
                 <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
                 <li><a href="/about" class="nav-link px-2 link-body-emphasis">About</a></li>
                 <li><a href="/contact" class="nav-link px-2 link-body-emphasis">Contact</a></li>
-                <li><a href="/list" class="nav-link px-2 link-body-emphasis active">List</a></li>
+                <li><a href="/list" class="nav-link px-2 link-body-emphasis">List</a></li>
             </ul>
 
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -37,63 +37,17 @@
         </div>
     </div>
 </header>
-
 <div class="container">
-    <h1>List user</h1>
-    <table class="table table-striped table-bordered">
-        <thead class="thead-dark">
-            <tr>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Message</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% list.forEach(function(user) { %>
-                <tr>
-                    <td>
-                        <%= user.name %>
-                    </td>
-                    <td>
-                        <%= user.phone %>
-                    </td>
-                    <td>
-                        <%= user.message %>
-                    </td>
-                    <td>
-                        <button class="btn btn-primary btn-sm" onclick="editUser('<%= user.id %>')">Edit</button>
-                        <button class="btn btn-danger btn-sm" onclick="deleteUser('<%= user.id %>')">Delete</button>
-                    </td>
-                </tr>
-                <% }); %>
-        </tbody>
-    </table>
+    <h1>Login page</h1>
+    <form action="/login/password" method="post">
+        <section>
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" autocomplete="username" required autofocus>
+        </section>
+        <section>
+            <label for="current-password">Password</label>
+            <input id="current-password" name="password" type="password" autocomplete="current-password" required>
+        </section>
+        <button type="submit">Sign in</button>
+    </form>
 </div>
-
-<script>
-    // Function to handle editing a user
-    function editUser(id) {
-        // Redirect to edit page with user id
-        window.location.href = '/edit/' + id;
-    }
-
-    // Function to handle deleting a user
-    function deleteUser(id) {
-        if (confirm("Are you sure you want to delete this user?")) {
-            // Send a DELETE request to the server
-            fetch('/delete/' + id, {
-                method: 'DELETE'
-            })
-                .then(response => {
-                    if (response.ok) {
-                        // Reload the page after deletion
-                        window.location.reload();
-                    } else {
-                        throw new Error('Something went wrong!');
-                    }
-                })
-                .catch(error => console.error('Error:', error));
-        }
-    }
-</script>

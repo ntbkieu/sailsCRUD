@@ -23,6 +23,7 @@ module.exports.routes = {
   '/': { view: 'pages/home' },
   'get /about': { view: 'pages/about' },
   'get /contact': { view: 'pages/contact' },
+  'get /login': { view: 'pages/login' },
   'get /list': 'DataController.list',
   'post /add': 'DataController.add',
   'get /edit/:id': 'DataController.edit',
