@@ -25,7 +25,7 @@ module.exports = {
 
 
   list: function (req, res) {
-    Data.find({}).exec(function (err, data) {
+    Data.find({}).exec((err, data) => {
       if (err) {
         return res.serverError(err);
       }

@@ -43,26 +43,24 @@
         </div>
     </div>
 </header>
-
 <div class="container">
-    <h1>Edit User</h1>
-    <form action="/update/<%= user.id %>" method="post" class="d-grid gap-2">
+    <h1>Sign-up page</h1>
+    <form action="/user" method="post" class="d-grid gap-2">
         <div class="form-group">
-            <label for="name">Name</label>
-            <input name="name" type="text" class="form-control" id="name" aria-describedby="nameHelp"
-                placeholder="Enter name" value="<%= user.name %>">
+            <label for="username">Username</label>
+            <input name="username" type="text" class="form-control" id="username" aria-describedby="nameHelp"
+                placeholder="Enter username">
         </div>
         <div class="form-group">
-            <label for="phone">Phone</label>
-            <input name="phone" type="text" class="form-control" id="phone" placeholder="Phone"
-                value="<%= user.phone %>">
+            <label for="email">Email</label>
+            <input name="email" type="text" class="form-control" id="email" placeholder="Enter Email">
         </div>
         <div class="form-group">
-            <label>Your message here</label>
-            <textarea name="message" class="form-control" id="" cols="10" rows="5"><%= user.message %></textarea>
+            <label for="password">Password</label>
+            <input name="password" type="text" class="form-control" id="password" placeholder="Enter Password">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-success">Update</button>
+            <button type="submit" class="btn btn-success">Submit</button>
         </div>
     </form>
 </div>
