@@ -55,6 +55,31 @@ module.exports.http = {
     //   return middlewareFn;
     // })(),
 
+    passportInit: require('passport').initialize(),
+    passportSession: require('passport').session(),
+
+    order: [
+      'cookieParser',
+      'session',
+      'passportInit',
+      'passportSession',
+      'bodyParser',
+      'compress',
+      'poweredBy',
+      'router',
+      'www',
+      'favicon',
+    ],
+
+    session: require('express-session')({
+      secret: 'your_secret_key_here',
+      cookie: {
+        maxAge: 24 * 60 * 60 * 1000 // 24 hours
+      },
+      resave: false,
+      saveUninitialized: true
+    }),
+
   },
 
 };

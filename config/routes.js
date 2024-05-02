@@ -24,6 +24,8 @@ module.exports.routes = {
   'get /about': { view: 'pages/about' },
   'get /contact': { view: 'pages/contact' },
   'get /login': { view: 'pages/login' },
+  'post /login': 'AuthController.login',
+  '/logout': 'AuthController.logout',
   'get /signup': { view: 'pages/signup' },
   'get /list': 'DataController.list',
   'post /add': 'DataController.add',

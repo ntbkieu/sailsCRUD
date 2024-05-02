@@ -10,6 +10,7 @@
     "@sailshq/socket.io-redis": "^6.1.2",
     "bcrypt-nodejs": "^0.0.3",
     "bootstrap": "^5.3.3",
+    "express-session": "^1.18.0",
     "grunt": "1.0.4",
     "jsonwebtoken": "^9.0.2",
     "passport": "^0.7.0",
